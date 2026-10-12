@@ -1,0 +1,54 @@
+# ==========================================
+# Student Task Management System - .gitignore
+# Files and folders that Git must NOT track
+# ==========================================
+
+# ---------- Editor and IDE settings ----------
+.vscode/
+.idea/
+*.code-workspace
+*.iml
+*.swp
+*.swo
+*~
+
+# ---------- Log files ----------
+*.log
+logs/
+
+# ---------- Operating-system files ----------
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+# macOS
+.DS_Store
+# Linux
+.directory
+
+# ---------- Maven output (used in a later assignment) ----------
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# ---------- Other generated files ----------
+node_modules/
+dist/
+build/
+out/
+coverage/
+*.class
+*.tmp
+*.temp
+*.bak
+*.zip
+
+# ---------- Secrets (never commit passwords or tokens) ----------
+.env
+.env.*
