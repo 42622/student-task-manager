@@ -1,8 +1,27 @@
 const taskForm = document.getElementById("taskForm");
 const taskTitle = document.getElementById("taskTitle");
 const taskDescription = document.getElementById("taskDescription");
+const taskPriority = document.getElementById("taskPriority");
 const taskList = document.getElementById("taskList");
 const message = document.getElementById("message");
+
+// The only priority values a task is allowed to have.
+const allowedPriorities = ["High", "Medium", "Low"];
+
+// Shows the task's priority (High, Medium or Low) as a coloured label above its title.
+function addPriorityLabel(taskCard) {
+    const priority = taskCard.dataset.priority;
+
+    if (!allowedPriorities.includes(priority)) {
+        return;
+    }
+
+    const priorityLabel = document.createElement("span");
+    priorityLabel.className = "priority-badge priority-" + priority.toLowerCase();
+    priorityLabel.textContent = priority + " Priority";
+
+    taskCard.insertBefore(priorityLabel, taskCard.firstChild);
+}
 
 // Shows the given status on a task card and updates its button text.
 // status must be "pending" or "completed".
@@ -53,8 +72,9 @@ function addStatusControls(taskCard) {
     }
 }
 
-// Give the sample tasks that are already on the page a status.
+// Give the sample tasks that are already on the page a priority label and a status.
 document.querySelectorAll(".task-card").forEach(function (taskCard) {
+    addPriorityLabel(taskCard);
     addStatusControls(taskCard);
 });
 
@@ -63,9 +83,10 @@ taskForm.addEventListener("submit", function (event) {
 
     const title = taskTitle.value.trim();
     const description = taskDescription.value.trim();
+    const priority = taskPriority.value;
 
-    if (title === "" || description === "") {
-        message.textContent = "Please enter both task title and description.";
+    if (title === "" || description === "" || !allowedPriorities.includes(priority)) {
+        message.textContent = "Please enter the task title, description and priority.";
         message.style.color = "red";
         return;
     }
@@ -73,6 +94,7 @@ taskForm.addEventListener("submit", function (event) {
     const taskCard = document.createElement("article");
     taskCard.className = "task-card";
     taskCard.dataset.status = "pending";
+    taskCard.dataset.priority = priority;
 
     const heading = document.createElement("h3");
     heading.textContent = title;
@@ -82,6 +104,7 @@ taskForm.addEventListener("submit", function (event) {
 
     taskCard.appendChild(heading);
     taskCard.appendChild(paragraph);
+    addPriorityLabel(taskCard);
     addStatusControls(taskCard);
     taskList.appendChild(taskCard);
 

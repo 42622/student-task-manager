@@ -31,6 +31,14 @@
                     placeholder="Enter task description"
                 ></textarea>
 
+                <label for="taskPriority">Task Priority</label>
+                <select id="taskPriority">
+                    <option value="">Select priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
                 <button type="submit">Add Task</button>
             </form>
 
@@ -41,17 +49,17 @@
             <h2>Student Tasks</h2>
 
             <div id="taskList">
-                <article class="task-card" data-status="pending">
+                <article class="task-card" data-status="pending" data-priority="High">
                     <h3>Complete DevOps Assignment</h3>
                     <p>Complete the Git practical assignment before the deadline.</p>
                 </article>
 
-                <article class="task-card" data-status="pending">
+                <article class="task-card" data-status="pending" data-priority="Medium">
                     <h3>Prepare Presentation</h3>
                     <p>Prepare presentation slides for the next class.</p>
                 </article>
 
-                <article class="task-card" data-status="completed">
+                <article class="task-card" data-status="completed" data-priority="Low">
                     <h3>Revise Git Concepts</h3>
                     <p>Review repositories, commits, branches and merging.</p>
                 </article>

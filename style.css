@@ -48,7 +48,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
@@ -60,6 +61,12 @@ textarea {
 textarea {
     min-height: 90px;
     resize: vertical;
+}
+
+select {
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 button {
@@ -128,6 +135,37 @@ button:hover {
 
 .task-card[data-status="completed"] .status-badge {
     background-color: #2e7d32;
+}
+
+/* ---------- Task priority ---------- */
+.priority-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.priority-high {
+    background-color: #fdecea;
+    color: #b42318;
+    border-color: #b42318;
+}
+
+.priority-medium {
+    background-color: #fff4e5;
+    color: #8a5300;
+    border-color: #8a5300;
+}
+
+.priority-low {
+    background-color: #e8f1fb;
+    color: #1f5f99;
+    border-color: #1f5f99;
 }
 
 footer {
