@@ -18,6 +18,8 @@ It is also the starting point of a continuing DevOps project. The same repositor
 - Allows a user to enter a task title and description.
 - Adds a new task to the page.
 - Prevents blank task submissions.
+- Displays a clear status (Pending or Completed) on every task.
+- Allows the status of any task to be changed with a button.
 - Uses a responsive webpage layout.
 
 ## Technologies Used
@@ -33,7 +35,7 @@ It is also the starting point of a continuing DevOps project. The same repositor
 student-task-manager/
 ├── index.html      # Page structure, add-task form and sample tasks
 ├── style.css       # Layout, colours and responsive design
-├── script.js       # Adds new tasks and blocks blank submissions
+├── script.js       # Adds tasks, blocks blank submissions, changes status
 ├── README.md       # Project documentation
 └── .gitignore      # Files and folders that Git must not track
 ```
@@ -45,6 +47,7 @@ student-task-manager/
 3. Enter a task title and a task description in the **Add New Task** form.
 4. Click **Add Task**. The new task appears at the end of the **Student Tasks** list.
 5. If the title or the description is left blank, the task is not added and an error message is shown.
+6. Every task shows its status. Click **Mark as Completed** or **Mark as Pending** to change it.
 
 No installation, server or internet connection is required.
 
